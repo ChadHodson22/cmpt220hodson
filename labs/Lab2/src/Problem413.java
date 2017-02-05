@@ -5,6 +5,7 @@ public class Problem413 {
 		System.out.println("Enter a letter ");
 		char letter = input.next().charAt(0);
 		
+		// JA: You are missing the upper case vowels.
 		if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u') {
 		System.out.println(letter + " is a vowel "); 
 		}
