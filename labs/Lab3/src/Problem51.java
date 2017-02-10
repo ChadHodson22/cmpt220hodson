@@ -36,7 +36,7 @@ public class Problem51 {
 			System.out.println("The sum is " + sum);
 			System.out.println("The number of positive integers is " + posInt);
 			System.out.println("The number of negative is " + negInt);
-			System.out.println("The average of the integers is " + (sum / numOfInts));
+			System.out.println("The average of the integers is " + (sum / numOfInts)); // JA: This is an integer division. You need to force it to be double.
 		}
 	}
 }

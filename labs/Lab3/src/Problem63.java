@@ -16,9 +16,9 @@ public class Problem63 {
 			
 		}
 		int result = Integer.parseInt(output);
-		return output;
+		return output; // JA: You cannot return a String in a method that should return an int.
 	}
-	public static boolean isPalindrome(int number) {
+	public static boolean isPalindrome(int number) { // JA: Where is the logic?
 		
 		
 	}
