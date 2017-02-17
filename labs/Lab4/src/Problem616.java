@@ -1,4 +1,4 @@
-
+// JA: Add comments to your code
 public class Problem616 {
 
 	    public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class Problem616 {
 
 	    public static int numberOfDaysInAYear(int year) {
 
-	        if (isLeapYear(year)) return 365;
+	        if (isLeapYear(year)) return 365; // JA: You have this reversed. Leap years have 366 days.
 	        else return 366;
 	    }
 	    public static boolean isLeapYear(int year) {

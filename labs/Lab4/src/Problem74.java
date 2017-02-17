@@ -33,7 +33,7 @@ public class Problem74 {
 	            total += scores[i];
 	        }
 
-	        return total / numberOfScores;
+	        return total / numberOfScores; // JA: This has to be a non-integer calculation.
 	    }
 
 	    public static int scoresAboveAndEqualToAverage(int[] scores, int average) {
