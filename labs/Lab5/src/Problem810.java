@@ -1,4 +1,4 @@
-
+// JA: Always add comments to your code
 public class Problem810 {
 	public static void main(String[] args) {
 		int[][] matrix = new int[4][4];
@@ -30,7 +30,8 @@ public class Problem810 {
 		for (int m = 0; m < matrix.length; m++) {
 			for (int n = 0; n < matrix[m].length; n++) {
 				System.out.printf("%d", matrix[m][n]);
-			}
+			} 
+			//JA: Need to add a System.out.println() here
 		}
 		System.out.println("The largest row index is: " + largestRow);
 		System.out.println("The larges column index is: " + largestCol);

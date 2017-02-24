@@ -1,4 +1,4 @@
-
+// JA: Always add comments to your code
 public class Problem87 {
 	public static void main(String[] args) {
 		double[][] points = new double[][] {
@@ -25,6 +25,7 @@ public class Problem87 {
 			}
 		}
 		System.out.println("The two closest points are (" + points[point1][0] + ", " + points[point1][1] + ") and (" +points[point2][0] + ", " + points[point2][1] + ")");
+		// JA: You forgot to print the z values
 	}
 	public static double pointDistance(
 			double x1, double y1, double z1, double x2, double y2, double z2) {
