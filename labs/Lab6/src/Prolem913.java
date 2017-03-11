@@ -1,5 +1,7 @@
 import java.text.DecimalFormat;
 import java.util.Scanner;
+// JA: Always add comments to your code
+// JA: This code looks exactly the same as another student in the class
 public class Prolem913 {
 	public static class Location {
 		static double[][] myArray = null;
@@ -53,7 +55,7 @@ public class Prolem913 {
 			int posJ = 0;
 			
 			for(int i=0; i<row; i++) {
-				for(int j=0; j<row; j++) {
+				for(int j=0; j<row; j++) { // JA: j<col
 					if(a[i][j] > maxValue) {
 						maxValue = a[i][j];
 						posI = i;
