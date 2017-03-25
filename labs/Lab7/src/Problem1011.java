@@ -1,4 +1,4 @@
-
+// JA: Because the circle2D class is defined inside this class, it can not be called from the test file
 public class Problem1011 {
 	class circle2d {
 		double x;
