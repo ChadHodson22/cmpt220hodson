@@ -1,0 +1,6 @@
+*.ini
+*.class
+*.bak
+*.classpath
+labs/Lab8/Lab8/.settings/org.eclipse.jdt.core.prefs
+*.project
