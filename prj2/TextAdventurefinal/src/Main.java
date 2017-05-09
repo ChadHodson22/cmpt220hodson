@@ -1,5 +1,6 @@
+			
 import java.util.Scanner; 
-public class Main {
+public class Main extends RealCombat {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 
@@ -54,7 +55,7 @@ public class Main {
 
 		String items[] = { flashlight, flareGun, machete, map, bandage, radio, radioWires, snorkel, workingRadio };
 		boolean hasItems[] = {false, false, false, false, false, false, false, false, false};
-		boolean found[] = {false, false};  
+		boolean codeEntered = false; 
 		
 
 		
@@ -231,32 +232,33 @@ public class Main {
 					currentLocation = locations[6];
 					System.out.println(waterfall);
 				}
+				else if (currentLocation == locations[9]){
+					currentLocation = locations[4];
+					System.out.println(cave);
+				}
+				
 			}
 			else if (cmd.equals("examine")){
 				if (currentLocation == locations[0]){
 					System.out.println("You found a map! Unlike other items this can be used at any time");
-					hasItems[3] = true;
+					hasItems[3] = false; 
 				}
 				else if (currentLocation == locations[1]) {
 					System.out.println(radioWires);
-					hasItems[6] = true;
 				}
 				else if (currentLocation == locations[2]) {
 					System.out.println(flashlight);
-					hasItems[0] = true;
 				}
 				else if (currentLocation == locations[3]) {
 					System.out.println("There are numbers carved into this wall. 5-3-1-7");
 				}
 				else if (currentLocation == locations[4]) {
 					System.out.println("You found bandages! Type bandage or bandages to heal yourself");
-					hasItems[4] = true;
 				}
 				else if (currentLocation == locations[5]) {
 					System.out.println("There is a safe hidden in a cabinet. There is a number pin");
 					if (cmd.equals("5-3-1-7") || cmd.equals("5317")){
 						System.out.println(flareGun);
-						hasItems[1] = true;
 					}
 				}
 				else if (currentLocation == locations[6]) {
@@ -264,105 +266,76 @@ public class Main {
 				}
 				else if (currentLocation == locations[7]) {
 					System.out.println(snorkel);
-					hasItems[7] = true;
 				}
 				else if (currentLocation == locations[8]) {
 					System.out.println(machete);
-					hasItems[2] = true;
 				}
 				else if (currentLocation == locations[9]) {
 					System.out.println(radio);
-					hasItems[5] = true;
 				}
 			}
 			if (cmd.equals("take")) {
-				if (inventoryItems >= inventorySize ){
-					System.out.println("You do not have enough inventory space. Drops items to clear up space");
-				}
-				else if (currentLocation == locations[0]) {
-					if (hasItems[3] = true) {
-						System.out.println("You already have this item");
-					}
-					else if (hasItems[3] = false) {
+				if (currentLocation == locations[0]) {
+					if (hasItems[3] == false) {
 						System.out.println("You picked up the map");
 						hasItems[3] = true;
+						hasItems[5]= true;
 						inventoryItems = inventoryItems + 1;
 					}	
 				}
 				else if (currentLocation == locations[1]) {
-					if (hasItems[6] = true) {
-						System.out.println("You already have this item");
-					}
-					else if (hasItems[6] = false) {
+					 if (hasItems[6] == false) {
 						System.out.println("You picked up the radio wires");
 						hasItems[6] = true;
 						inventoryItems = inventoryItems + 1;
 					}
 				}
 				else if (currentLocation == locations[2]) {
-					if (hasItems[0] = true) {
-						System.out.println("You already have this item");
-					}
-					else if (hasItems[0] = false) {
-					System.out.println("You picked up the flashlight");
-					hasItems[0] = true;
-					inventoryItems = inventoryItems + 1;
+					 if (hasItems[0] == false) {
+						System.out.println("You picked up the flashlight");
+						hasItems[0] = true;
+						inventoryItems = inventoryItems + 1;
 					}
 				}
 				else if (currentLocation == locations[3]) {
 					System.out.println("Nothing here to take");
 				}
 				else if (currentLocation == locations[4]) {
-					if (hasItems[4] = true) {
-						System.out.println("You already have this item");
-					}
-					else if (hasItems[4] = false) {
-					System.out.println("You picked up the bandages");
-					hasItems[4] = true;
-					inventoryItems = inventoryItems + 1;
+					 if (hasItems[4] == false) {
+						System.out.println("You picked up the bandages");
+						hasItems[4] = true;
+						inventoryItems = inventoryItems + 1;
 					}
 				}
 				else if (currentLocation == locations[5]) {
-					if (hasItems[1] = true) {
-						System.out.println("You already have this item");
-					}
-					else if (hasItems[1] = false) {
-					System.out.println("You picked up the flare gun");
-					hasItems[1] = true;
-					inventoryItems = inventoryItems + 1;
+					 if (hasItems[1] == false && codeEntered == true){
+						System.out.println("You picked up the flare gun");
+						hasItems[1] = true;
+						inventoryItems = inventoryItems + 1;
 					}
 				}
 				else if (currentLocation == locations[6]) {
 					System.out.println("Nothing here to take");
 				}
 				else if (currentLocation == locations[7]) {
-					if (hasItems[7] = true) {
-						System.out.println("You already have this item");
-					}
-					else if (hasItems[7] = false) {
-					System.out.println("You picked up the snorkel");
-					hasItems[7] = true;
-					inventoryItems = inventoryItems + 1;
+					 if (hasItems[7] == false) {
+						System.out.println("You picked up the snorkel");
+						hasItems[7] = true;
+						inventoryItems = inventoryItems + 1;
 					}
 				}
 				else if (currentLocation == locations[8]) {
-					if (hasItems[2] = true) {
-						System.out.println("You already have this item");
-					}
-					else if (hasItems[2] = false) {
-					System.out.println("You picked up the machete");
-					hasItems[2] = true;
-					inventoryItems = inventoryItems + 1;
+					 if (hasItems[2] == false) {
+						System.out.println("You picked up the machete");
+						hasItems[2] = true;
+						inventoryItems = inventoryItems + 1;
 					}
 				}
 				else if (currentLocation == locations[9]) {
-					if (hasItems[5] = true) {
-						System.out.println("You already have this item");
-					}
-					else if (hasItems[5] = false) {
-					System.out.println("You picked up the radio");
-					hasItems[5] = true;
-					inventoryItems = inventoryItems + 1;
+					 if (hasItems[5] == false) {
+						System.out.println("You picked up the radio");
+						hasItems[5] = true;
+						inventoryItems = inventoryItems + 1;
 					}
 				}
 			}
@@ -433,7 +406,6 @@ public class Main {
 				if (hasItems[2] == true) {
 					if (currentLocation == locations[9]) {
 						System.out.println("You hit the snake and killed it"  );
-						
 					}
 					else if (currentLocation != locations[9]) {
 					}
@@ -462,15 +434,24 @@ public class Main {
 				System.out.println("Goodbye");
 				System.exit(0);
 			}
+			if (cmd.equals("5317")) {
+				if (currentLocation == locations[5]) {
+					System.out.println("The safe unlocked");
+					codeEntered = true;
+				}
+				else {
+					
+				}
+			}
 			if (cmd.equals("escape")) {
-				if (hasItems[9] == false) {
+				if (hasItems[8] == false) {
 					System.out.println("You have no way of cantacting anyone for help");
 				}
-				else if (hasItems[9] == true && hasItems[1]== false) {
+				else if (hasItems[8] == true && hasItems[1]== false) {
 				System.out.println("You signal for help through the radio to a helicopter is flying near by the island. They search and"
 						+ "search but cannot find your exact location. Eventually they give up and leave you.");
 				}
-				else if (hasItems[9] == true && hasItems[1]== true) {
+				else if (hasItems[8] == true && hasItems[1]== true) {
 					System.out.println("You signal for help through the radio to a helicopter is flying near by the island. As they "
 							+ "get close to you you shoot off the flare gun to let them know your location. It's only a matter of"
 							+ " time before they resue you");
@@ -478,11 +459,10 @@ public class Main {
 				}
 			}
 		}
-		
 		RealCombat rc = new RealCombat();
 		rc.main();
 	}
-}
+}	
 
 //String map = "Mountains3---Abandoned Building(FG1)5---Cave(B4)4---?????(R5)9                         \n "
 //		+ "       |                |            |                                   \n "
